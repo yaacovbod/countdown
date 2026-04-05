@@ -230,6 +230,18 @@
 </head>
 <body>
 
+  <!-- Audio -->
+  <audio id="bg-audio" loop src="Stranger Things Clock Chimes 4 TIMES.mp3"></audio>
+
+  <!-- Play overlay -->
+  <div id="play-overlay" style="
+    position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;background:rgba(0,0,0,0.88);
+    cursor:pointer;gap:1rem;">
+    <div style="font-size:5rem;filter:drop-shadow(0 0 20px #8b0000)">💀</div>
+    <div style="font-size:1.3rem;color:#cc0000;letter-spacing:0.15em;font-family:'Rubik',sans-serif;text-shadow:0 0 15px #8b0000">לחץ להתחיל</div>
+  </div>
+
   <!-- Particles -->
   <div class="particles" id="particles"></div>
   <!-- Crack decoration -->
@@ -307,6 +319,14 @@
 
     update();
     setInterval(update, 1000);
+
+    // Audio: start on first click
+    const overlay = document.getElementById('play-overlay');
+    const audio   = document.getElementById('bg-audio');
+    overlay.addEventListener('click', () => {
+      audio.play();
+      overlay.style.display = 'none';
+    }, { once: true });
 
     // Generate particles
     const container = document.getElementById('particles');
