@@ -226,6 +226,42 @@
       pointer-events: none;
       z-index: 0;
     }
+
+    /* ── Mobile ── */
+    @media (max-width: 480px) {
+      body { min-height: 100dvh; }
+
+      .container { padding: 1.2rem 0.8rem; }
+
+      .skull { font-size: 2.2rem; margin-bottom: 0.3rem; }
+
+      h1 {
+        font-size: clamp(1.3rem, 7vw, 1.8rem);
+        margin-bottom: 1.5rem;
+      }
+
+      .countdown-grid {
+        gap: clamp(0.25rem, 1.5vw, 0.5rem);
+        margin-bottom: 2rem;
+      }
+
+      .box {
+        width:  clamp(60px, 19vw, 80px);
+        height: clamp(60px, 19vw, 80px);
+        border-radius: 6px;
+      }
+
+      .number { font-size: clamp(1.6rem, 10vw, 2.2rem); }
+
+      .label { font-size: clamp(0.55rem, 2.5vw, 0.7rem); letter-spacing: 0.1em; }
+
+      .separator {
+        font-size: clamp(1.4rem, 7vw, 2rem);
+        margin-top: clamp(12px, 5vw, 20px);
+      }
+
+      .target-date { font-size: clamp(0.8rem, 3.5vw, 1rem); }
+    }
   </style>
 </head>
 <body>
